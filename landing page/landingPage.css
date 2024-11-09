@@ -3,38 +3,44 @@ html {
   scroll-behavior: smooth;
 }
 
+body {
+  margin-top: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
 /*main layout*/
 #mainContainer {
   display: grid;
   left: 0px;
-  grid-template-areas:'part 1' 'part 2' 'part 3';
 }
 
 /*area - area*/
 #navBar {
-  top: 0px;
+  top: -2px;
   left: 0px;
   position: fixed;
   width: 100%;
   height: 56px;
   z-index: 1;
-  background-color: aqua;
+  background-color: white;
 }
 
 #mulaiKarir {
-  grid-area: part 1;
+  display: grid;
+  
   width: 100%;
+  height: 591px;
   background-color: red;
+  padding-top: 54px;
 }
 
 #keuntungan {
-  grid-area: part 2;
   width: 100%;
   background-color: green;
 }
 
 #tentangKami {
-  grid-area: part 3;
   width: 100%;
   background-color: purple;
 }
@@ -43,21 +49,51 @@ html {
 #navBarContainer {
   display: grid;
   align-items: center;
-  margin-left: 20px;
-  margin-right: 20px;
-  column-gap: 100px;
+  margin-left: 60px;
+  margin-right: 60px;
+  column-gap: 20px;
 }
 
-#logoAndText{
+#logoContainer {
   display: grid;
-  height: 50px;
-  width: 50px;
   grid-column: 1/2;
+  
+}
+
+#logo1{
+  display: grid;
+  height: 45px;
+  width: 30px;
+  grid-column: 1/2;
+  margin-top: 5px;
+}
+
+#text{
+  display: grid;
+  height: 58px;
+  width: 150px;
+  grid-column: 2/7;
 }
 
 .navBarButton {
   display: grid;
   font-size: larger;
+  background-color: transparent;
+  border: none;
+  height: 54px;
+  text-align: center;
+  line-height: 49px;
+  transition-duration: 500ms;
+}
+
+.navBarButton:hover {
+  display: grid;
+  font-size: larger;
+  background-color: orangered;
+  border: orangered;
+  border-width: 10px;
+  height: 54px;
+  transition-duration: 500ms;
 }
 
 #navBarButton1 {
@@ -72,8 +108,19 @@ html {
   grid-column: 4/5;
 }
 
+/*mulai Karir*/
+#mulaiKarir1 {
+  display: grid;
+  grid-column: 1/2;
+}
+
+#mulaiKarir2 {
+  display: grid;
+  grid-column: 2/3;
+}
+
 /*tentang kami*/
-#logo {
+#logo2 {
   height: 100px;
   width: 100px;
 }
