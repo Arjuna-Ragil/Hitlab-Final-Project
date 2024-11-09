@@ -12,23 +12,26 @@
   <!--NavBar-->
     <div id="navBar">
 
-      <div>
+      <div id="navBarContainer">
         <img id="logoAndText" src="/image/logo and text.png" alt="Logo and text JobQues"/>
+        <button id="navBarButton1" class="navBarButton">Mulai Karir Kamu</button>
+        <button id="navBarButton2" class="navBarButton">Keuntungan</button>
+        <button id="navBarButton3" class="navBarButton">Tentang Kami</button>
       </div>
-      <button class="navBarButton">Mulai Karir Kamu</button>
-      <button class="navBarButton">Keuntungan</button>
-      <button class="navBarButton">Tentang Kami</button>
 
     </div>
 
   <!--Mulai Karir Area-->
+  <br>
+  <br> <!--br ini hanya sementara-->
+  <br>
     <div id="mulaiKarir">
 
       <div id="mulaiKarir1">
         <h1 id="textUtama">Mulailah Karir Anda Bersama Kami</h1>
         <p id="textSecondary">Sign up dan mulai gunakan aplikasi kami</p>
-        <button class="buttonLogin">SIGN UP</button> <!--sambungin ke page sign up-->
-        <button class="buttonLogin">SIGN IN</button> <!--sambungin ke page sign in-->
+        <button class="buttonLogin" onclick="signUp()">SIGN UP</button> 
+        <button class="buttonLogin" onclick="signIn()">SIGN IN</button> 
       </div>
 
       <div id="mulaiKarir2">
@@ -86,5 +89,6 @@
 
     </div>
   </div>
+<script src="landingPage.js"></script>
 </body>
 </html>
