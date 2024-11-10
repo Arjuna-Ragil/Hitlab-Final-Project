@@ -9,6 +9,7 @@
 </head>
 <body>
   <div id="mainContainer">
+
   <!--NavBar-->
     <div id="navBar">
 
@@ -38,18 +39,25 @@
   <!--Mulai Karir Area-->
     <div id="mulaiKarir">
 
-      <div id="mulaiKarir1">
-        <h1 id="textUtama">Mulailah Karir Anda Bersama Kami</h1>
-        <p id="textSecondary">Sign up dan mulai gunakan website kami</p>
-        <div id="buttonLoginContainer">
-          <button class="buttonLogin" onclick="signUp()">SIGN UP</button> 
-          <button class="buttonLogin" onclick="signIn()">SIGN IN</button> 
-        </div>
+      <h1 id="textUtama">Mulailah Karier Anda Bersama JobQues</h1>
+      <br>
+      <p id="textSecondary">Sign up untuk memulai karier anda</p>
+      <br>
+
+      <div id="buttonLoginContainer">
+        <button id="signUp" class="buttonLogin" onclick="signUp()">SIGN UP</button> 
+        <button id="signIn" class="buttonLogin" onclick="signIn()">SIGN IN</button> 
       </div>
 
-      <div id="mulaiKarir2">
-        <p>image</p>
-        <img/> <!--foto sementara, harap diganti dengan orang kerja-->
+      <div id="bottomPart">
+        <img id="foxPic" src="/image/fox 2.0.png" alt="fox"/>
+            
+    <!--animasi background mulai karir-->
+        <div id="box1" class="boxAnimation"></div>
+        <div id="box2" class="boxAnimation"></div>
+        <div id="box3" class="boxAnimation"></div>
+        <div id="box4" class="boxAnimation"></div>
+        <div id="box5"></div>
       </div>
 
     </div>
@@ -57,50 +65,88 @@
   <!--Keuntungan Area-->
     <div id="keuntungan">
 
-      <h1 id="KeuntunganTitle">Keuntungan</h1>
+      <h1 id="keuntunganTitle">Keuntungan</h1>
 
       <div id="keuntunganContainer">
-        <div id="keuntungan1">
-          <p>Akses ke lowongan terbaru dan terlengkap</p>
+
+        <div id="keuntungan1" class="keuntunganBox">
+          <p class="keuntunganTeks">Akses ke lowongan terbaru dan terlengkap</p>
+          <img class="keuntunganPic" src="/image/ques kerja.png" alt="ques kerja"/>
         </div>
-        <div id="keuntungan2">
-          <p>Fitur pencarian yang mudah dan spesifik</p>
+
+        <div id="keuntungan2" class="keuntunganBox">
+          <p class="keuntunganTeks">Fitur pencarian yang mudah dan spesifik</p>
+          <img class="keuntunganPic" src="/image/ques search.png" alt="ques search"/>
         </div>
-        <div id="keuntungan3">
-          <p>Informasi terpercaya dan aman</p>
+
+        <div id="keuntungan3" class="keuntunganBox">
+          <p class="keuntunganTeks">Informasi terpercaya dan aman</p>
+          <img class="keuntunganPic" src="/image/ques shield 2.0.png" alt="ques shield"/>
         </div>
-        <div id="keuntungan4">
-          <p>Peluang karir di berbagai level</p>
+
+        <div id="keuntungan4" class="keuntunganBox">
+          <p class="keuntunganTeks">Peluang karir di berbagai level</p>
+          <img class="keuntunganPic" src="/image/ques level up 2.0.png" alt="ques level up"/>
         </div>
-        <div id="keuntungan5">
-          <p>Dukungan tim customer service yang responsif</p>
+
+        <div id="keuntungan5" class="keuntunganBox">
+          <p class="keuntunganTeks">Dukungan tim customer service yang responsif</p>
+          <img class="keuntunganPic" src="/image/ques response.png" alt="ques response"/>
         </div>
+
       </div>
     </div>
 
   <!--Tentang Kami Area-->
     <div id="tentangKami">
+
       <h1>Tentang Kami</h1>
 
-      <div id="tentangKami1">
-        <img id="logo2" src="/image/logo.png" alt="Logo JobQues"/> <!--logo-->
-      </div>
+      <img id="logo2" src="/image/logo renew.png" alt="Logo JobQues"/>
 
-      <div id="tentangKami2">
-        <h2>Kenal kami dengan lebih jelas</h2>
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eveniet explicabo vero, reiciendis, obcaecati fugiat culpa magnam adipisci cupiditate est iure doloribus consequuntur. Dolor temporibus error saepe eum optio et recusandae!</p>
-      </div>
+      <h2>Kenal kami dengan lebih jelas</h2>
 
-      <div id="tentangKami3">
-        <img/> <!--foto kita-->
-      </div>
+      <p id="tentangKamiP"> Haloo...Selamat Datang di JobQues! <br> <br>
 
-      <div id="tentangKami4">
-        <div id="sosmedContainer">
-          <!--sosmed disini-->
-        </div>
-      </div>
+        Apakah Anda sedang mencari peluang karir yang sesuai dengan minat dan keahlian Anda? Di sini, kami hadir 
+        untuk membantu Anda menemukan pekerjaan impian! <br> <br>
+        
+        Di JobQues, kami menyediakan berbagai informasi lowongan pekerjaan dari perusahaan terkemuka di berbagai 
+        industri. Baik Anda seorang fresh graduate yang sedang memulai karir, atau seorang profesional berpengalaman 
+        yang mencari tantangan baru, kami memiliki pilihan lowongan yang tepat untuk Anda. <br> <br>
+        
+        Kami berkomitmen untuk memberikan pengalaman pencarian kerja yang mudah dan efisien, dengan fitur pencarian 
+        yang canggih dan filter yang membantu Anda menemukan posisi yang sesuai dengan kualifikasi dan lokasi yang 
+        Anda inginkan. <br> <br>
+        
+        Jangan lewatkan kesempatan untuk menemukan pekerjaan yang sesuai dengan passion Anda. Mulailah perjalanan 
+        karir Anda bersama kami! <br> <br>
+        
+        Temukan peluang karir Anda hari ini dengan JobQues!</p>
 
+      <h3>Follow and Contact Us</h3>
+
+      <div id="sosmedContainer">
+
+        <a href="https://www.instagram.com/arjuna_ragill/" target="_blank">
+          <img id="insta" class="socialLogo" 
+          src="https://cdn4.iconfinder.com/data/icons/social-messaging-ui-color-shapes-2-free/128/social-instagram-new-circle-512.png" 
+          alt="instagram" />
+        </a>
+
+        <a href="https://www.tiktok.com/@arjunax123" target="_blank">
+          <img id="tiktok" class="socialLogo" 
+          src="https://static.vecteezy.com/system/resources/previews/020/964/382/non_2x/tiktok-circle-icon-for-web-design-free-png.png" 
+          alt="tiktok" />
+        </a>
+
+        <a href="HTTPS://wa.me/62081217942843" target="_blank">
+          <img id="whatsapp" class="socialLogo" 
+          src="https://cdn2.iconfinder.com/data/icons/social-messaging-ui-color-shapes-2-free/128/social-whatsapp-circle-512.png" 
+          alt="whatsapp" />
+        </a>
+        
+      </div>
     </div>
   </div>
 <script src="landingPage.js"></script>
