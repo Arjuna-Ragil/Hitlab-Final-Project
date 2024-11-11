@@ -1,9 +1,14 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign In</title>
+  <link rel="icon" type="image/x-icon" href="/favicon (1).ico">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
 <style>
-h1{
+    h1{
   
   font-family: 'Poppins', sans-serif; 
   font-weight: 900; 
@@ -11,7 +16,7 @@ h1{
   color: #ff8d0c; 
   text-align: center; 
 }
-body {font-family: 'Poppins', sans-serif;}
+    body {font-family: 'Poppins', sans-serif;}
 * {box-sizing: border-box}
 
 /* Full-width input fields */
@@ -99,26 +104,24 @@ button:hover {
      width: 50%
   }
 }
+
 </style>
 <body>
     </div><form action="/action_page.php" style="border:1px solid #ccc">
   <div class="container">
-    <h1>Sign Up</h1>
+    <h1>Sign In</h1>
     <img src="/image/logo and text renew.png" alt="Logo" class="logo">
-    <p>Isi form di bawah untuk membuat akun JobQues mu!</p>
+    <p>Belum punya akun? <a href="http://localhost:5000/JobQues/sign-up">Sign Up</a></p>
     <hr>
 
-    <label for="name"><b>Username</b></label>
-    <input type="text" placeholder="Masukkan Username Baru" name="name" required>
+    <label for="name"><b>Username/Email</b></label>
+    <input type="text" placeholder="Masukkan Username atau Email" name="name" required>
 
     <label for="email"><b>Email</b></label>
     <input type="text" placeholder="Masukkan Email" name="email" required>
 
     <label for="psw"><b>Kata Sandi</label>
     <input type="password" placeholder="Masukkan Kata Sandi" name="psw" required>
-
-    <label for="psw-repeat">Konfirmasi Kata Sandi</label>
-    <input type="password" placeholder="Konfirmasi Kata Sandi" name="psw-repeat" required>
     
     <label>
       <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Selalu Ingat Akun
@@ -127,10 +130,10 @@ button:hover {
   
 
     <div class="clearfix">
-      <button type="button" class="cancelbtn">Batal</button>
-      <button type="submit" class="signupbtn">Sign Up</button>
+      <button type="button" class="cancelbtn" onclick="landingPage()">Batal</button>
+      <button type="submit" class="signupbtn">Sign In</button>
   </div>
-</form>
 
+  <script src="/scripts/login.js"></script>
 </body>
 </html>
