@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<style>
+h1{
+  
+  font-family: 'Poppins', sans-serif; 
+  font-weight: 900; 
+  font-size: 36px; 
+  color: #ff8d0c; 
+  text-align: center; 
+}
+body {font-family: 'Poppins', sans-serif;}
+* {box-sizing: border-box}
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f3f3f3;
+  border-radius: 30px;
+  border-width: 200px;
+  border-radius: 100px;
+}
+  .logo {
+  width: 150px;
+  height: auto;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+
+}
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #bbbaba;
+  outline: none;
+}
+
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 50px;
+}
+
+/* Set a style for all buttons */
+button {
+  background-color: #ff8d0c;
+  color: rgb(32, 32, 32);
+  padding: 14px 20px;
+  margin: 0;
+  border: none;
+  cursor: pointer;
+  width: 130px;
+  height: 40px;
+  opacity: 0.9;
+  border-radius: 100px;
+  margin-block: 20px;
+  font-weight: 500px;
+
+  
+}
+
+button:hover {
+  opacity:1;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+  padding: 14px 20px;
+  background-color: #d0d0d0;
+  border: none;
+  border-radius: 70px;
+  color: black;
+}
+
+/* Float cancel and signup buttons and add an equal width */
+.cancelbtn, .signupbtn {
+  float: left;
+  width: 50%;
+}
+
+/* Add padding to container elements */
+.container {
+  padding: 16px;
+}
+
+/* Clear floats */
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* Change styles for cancel button and signup button on extra small screens */
+@media screen and (max-width: 300px) {
+  .cancelbtn, .signupbtn {
+     width: 50%
+  }
+}
+</style>
+<body>
+    </div><form action="/action_page.php" style="border:1px solid #ccc">
+  <div class="container">
+    <h1>Sign Up</h1>
+    <img src="logo and text renew.png" alt="Logo" class="logo">
+    <p>Isi form di bawah untuk membuat akun Jobques mu!</p>
+    <hr>
+
+    <label for="name"><b>Username</b></label>
+    <input type="text" placeholder="Masukkan Username Baru" name="name" required>
+
+    <label for="email"><b>Email</b></label>
+    <input type="text" placeholder="Masukkan Email" name="email" required>
+
+    <label for="psw"><b>Kata Sandi</label>
+    <input type="password" placeholder="Masukkan Kata Sandi" name="psw" required>
+
+    <label for="psw-repeat">Konfirmasi Kata Sandi</label>
+    <input type="password" placeholder="Konfirmasi Kata Sandi" name="psw-repeat" required>
+    
+    <label>
+      <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Selalu Ingat Akun
+    </label>
+    
+  
+
+    <div class="clearfix">
+      <button type="button" class="cancelbtn">Batal</button>
+      <button type="submit" class="signupbtn">Sign Up</button>
+  </div>
+</form>
+
+</body>
+</html>
