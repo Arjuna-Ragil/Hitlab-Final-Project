@@ -1,7 +1,7 @@
 const { authenticate } = require('passport')
 const bcrypt = require('bcrypt')
 
-function initialize(passport, getUserByEmail, getUserById) {
+function initialized(passport, getUserByEmail, getUserById) {
   const authenticateAccount = async (email, password, done) => {
     const account = getUserByEmail(email)
     if (account == null) {
@@ -30,4 +30,4 @@ function initialize(passport, getUserByEmail, getUserById) {
   })
 }
 
-module.exports = initialize
+module.exports = initialized

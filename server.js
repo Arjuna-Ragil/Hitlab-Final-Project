@@ -1,4 +1,4 @@
-//setting stuff//
+//Requiring stuff//
 if (process.env.NODE_ENV !== 'production') {
   require('dotenv').config()
 }
@@ -17,6 +17,10 @@ initializedPassport(passport,
   id => account.find(user => user.id === id)
 )
 
+//penyimpanan user
+const account = [];
+
+//setting stuff
 app.set('views', path.join(__dirname, 'views'));
 app.set('view-engine', 'ejs');
 
@@ -25,16 +29,13 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(flash())
 app.use(session({
-  secret: process.env.session_secret,
+  secret: process.env.SESSION_SECRET,
   resave: false,
   saveUninitialized: false
 }))
 
 app.use(passport.initialize())
 app.use(passport.session())
-
-//penyimpanan user
-const account = [];
 
 //render frontend
 app.get("/JobQues", (req, res) => {
