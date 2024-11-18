@@ -25,6 +25,9 @@ body {
   width: 100%;
   height: 56px;
   background-color: white;
+  animation: appear linear;
+  animation-timeline: scroll();
+  animation-range: entry 0% cover 35%  ;
 }
 
 #mulaiKarir {
@@ -41,7 +44,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-bottom: 20px;
+  padding-bottom: 40px;
   width: 100%;
   height: 640px;
   background-color: rgb(253, 205, 161);
@@ -120,6 +123,16 @@ body {
 
 #navBarButton3 {
   grid-column: 4/5;
+}
+
+/*navbar appear*/
+@keyframes appear {
+  from {
+    background-color: transparent;
+  }
+  to {
+    background-color: white;
+  }
 }
 
 /*mulai Karir*/
@@ -245,8 +258,8 @@ body {
   0%   {background-color:red;}
   25%  {background-color:orangered}
   50%  {background-color:rgb(228, 134, 27);}
-  75%  {background-color:orangered;}
-  100% {background-color:red;}
+  75%  {background-color:orangered}
+  100%   {background-color:red;}
 }
 
 /*keuntungan*/

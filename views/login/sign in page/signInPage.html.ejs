@@ -107,21 +107,23 @@ button:hover {
 
 </style>
 <body>
-    </div><form action="/action_page.php" style="border:1px solid #ccc">
+    </div><form action="/JobQues/sign-in" method="POST" style="border:1px solid #ccc">
   <div class="container">
     <h1>Sign In</h1>
     <img src="/image/logo and text renew.png" alt="Logo" class="logo">
     <p>Belum punya akun? <a href="http://localhost:5000/JobQues/sign-up">Sign Up</a></p>
     <hr>
 
-    <label for="name"><b>Username/Email</b></label>
-    <input type="text" placeholder="Masukkan Username atau Email" name="name" required>
+    <% if (messages.error) {%>
+      <%= messages.error %>
+    <% } %>
+    <br>
 
     <label for="email"><b>Email</b></label>
-    <input type="text" placeholder="Masukkan Email" name="email" required>
+    <input type="text" placeholder="Masukkan Email" name="email" id="email" required>
 
-    <label for="psw"><b>Kata Sandi</label>
-    <input type="password" placeholder="Masukkan Kata Sandi" name="psw" required>
+    <label for="password"><b>Kata Sandi</label>
+    <input type="password" placeholder="Masukkan Kata Sandi" name="password" id="password" required>
     
     <label>
       <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Selalu Ingat Akun
