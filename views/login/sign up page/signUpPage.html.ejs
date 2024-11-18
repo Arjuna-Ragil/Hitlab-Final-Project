@@ -62,8 +62,6 @@ button {
   border-radius: 100px;
   margin-block: 20px;
   font-weight: 500px;
-
-  
 }
 
 button:hover {
@@ -105,7 +103,7 @@ button:hover {
 }
 </style>
 <body>
-    </div><form action="/action_page.php" style="border:1px solid #ccc">
+    </div><form action="/JobQues/sign-up" method="POST" style="border:1px solid #ccc">
   <div class="container">
     <h1>Sign Up</h1>
     <img src="/image/logo and text renew.png" alt="Logo" class="logo">
@@ -114,13 +112,13 @@ button:hover {
     <hr>
 
     <label for="name"><b>Username</b></label>
-    <input type="text" placeholder="Masukkan Username Baru" name="name" required>
+    <input type="text" placeholder="Masukkan Username Baru" name="name" id="name" required>
 
     <label for="email"><b>Email</b></label>
-    <input type="text" placeholder="Masukkan Email" name="email" required>
+    <input type="text" placeholder="Masukkan Email" name="email" id="email" required>
 
-    <label for="psw"><b>Kata Sandi</label>
-    <input type="password" placeholder="Masukkan Kata Sandi" name="psw" required>
+    <label for="password"><b>Kata Sandi</label>
+    <input type="password" placeholder="Masukkan Kata Sandi" name="password" id="password" required>
 
     <label for="psw-repeat">Konfirmasi Kata Sandi</label>
     <input type="password" placeholder="Konfirmasi Kata Sandi" name="psw-repeat" required>

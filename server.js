@@ -1,13 +1,41 @@
-//setting stuff//
+//Requiring stuff//
+if (process.env.NODE_ENV !== 'production') {
+  require('dotenv').config()
+}
+
 const express = require('express');
 const app = express();
 const path = require('path');
+const bcrypt = require('bcrypt');
+const passport = require('passport');
+const flash = require('express-flash');
+const session = require('express-session');
+
+//penyimpanan user
+const users = [];
+
+//setting stuff
+const initializePassport = require('./passport-config');
+initializePassport(passport, 
+  email => users.find(user => user.email === email),
+  id => users.find(user => user.id === id)
+)
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view-engine', 'ejs');
 
+app.use(express.urlencoded({extended: false}))
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(flash())
+app.use(session({
+  secret: process.env.SESSION_SECRET,
+  resave: false,
+  saveUninitialized: false
+}))
+
+app.use(passport.initialize())
+app.use(passport.session())
 
 //render frontend
 app.get("/JobQues", (req, res) => {
@@ -20,6 +48,35 @@ app.get("/JobQues/sign-in", (req, res) => {
 
 app.get("/JobQues/sign-up", (req, res) => {
   res.render('./login/sign up page/signUpPage.html.ejs');
+})
+
+app.get("/JobQues/Home-Page", (req, res) => {
+  res.render('./home page/homePage.html.ejs');
+})
+
+//sign in
+app.post("/JobQues/sign-in", passport.authenticate('local', {
+  successRedirect: '/JobQues/Home-Page',
+  failureRedirect: '/JobQues/sign-in',
+  failureFlash: true
+}))
+
+//sign up
+app.post("/JobQues/sign-up", async (req, res) => {
+  try {
+    const hashedPassword = await bcrypt.hash(req.body.password, 10)
+    users.push({
+      id: Date.now().toString(),
+      name: req.body.name,
+      email: req.body.email,
+      password: hashedPassword,
+    })
+    console.log(users)
+    res.redirect('/JobQues/sign-in')
+  }
+  catch {
+    res.redirect('/JobQues/sign-up')
+  }
 })
 
 //port
