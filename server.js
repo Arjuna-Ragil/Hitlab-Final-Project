@@ -11,16 +11,16 @@ const passport = require('passport');
 const flash = require('express-flash');
 const session = require('express-session');
 
-const initializedPassport = require('./passport-config');
-initializedPassport(passport, 
-  email => account.find(user => user.email === email),
-  id => account.find(user => user.id === id)
-)
-
 //penyimpanan user
-const account = [];
+const users = [];
 
 //setting stuff
+const initializePassport = require('./passport-config');
+initializePassport(passport, 
+  email => users.find(user => user.email === email),
+  id => users.find(user => user.id === id)
+)
+
 app.set('views', path.join(__dirname, 'views'));
 app.set('view-engine', 'ejs');
 
@@ -64,13 +64,14 @@ app.post("/JobQues/sign-in", passport.authenticate('local', {
 //sign up
 app.post("/JobQues/sign-up", async (req, res) => {
   try {
-    const hashedPassword = await bcrypt.hash(req.body.psw, 10)
-    account.push({
+    const hashedPassword = await bcrypt.hash(req.body.password, 10)
+    users.push({
       id: Date.now().toString(),
       name: req.body.name,
       email: req.body.email,
       password: hashedPassword,
     })
+    console.log(users)
     res.redirect('/JobQues/sign-in')
   }
   catch {
