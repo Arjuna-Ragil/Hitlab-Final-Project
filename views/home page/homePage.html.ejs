@@ -121,8 +121,80 @@
       <div class="right-column">
         <h2>Job Listings</h2>
         <div class="job-listings"></div>
+        <form id="jobForm">
+          <input type="text" id="jobInput" placeholder="Nama Perusahaan" required />
+          <input type="text" id="jobDescription" placeholder="Posisi Pekerjaan" required />
+          <input type="number" id="jobSalary" placeholder="Gaji" required />
+          <button type="submit">Create</button>
+        </form>
+        <div class="job-listings" id="jobListings"></div>
       </div>
     </div>
   </div>
+  <script>
+    const API_URL = 'http://localhost:5000/api/jobs';
+    const jobForm = document.getElementById('jobForm');
+    const jobListings = document.getElementById('jobListings');
+
+    // Fungsi untuk memuat pekerjaan dari backend
+    async function loadJobs() {
+      const response = await fetch(API_URL);
+      const jobs = await response.json();
+      jobListings.innerHTML = ''; // Kosongkan daftar sebelumnya
+      jobs.forEach(job => addJobToDOM(job));
+    }
+
+    // Fungsi untuk menampilkan pekerjaan di DOM
+    function addJobToDOM(job) {
+      const jobDiv = document.createElement('div');
+      jobDiv.className = 'job-listing';
+      jobDiv.dataset.id = job.id;
+
+      jobDiv.innerHTML = `
+        <p>Nama Perusahaan: ${job.title}</p>
+        <p>Posisi Pekerjaan: ${job.description}</p>
+        <p>Gaji: Rp.${job.salary}</p>
+        <button onclick="deleteJob(${job.id})">Delete</button>
+      `;
+
+      jobListings.appendChild(jobDiv);
+    }
+
+    // Fungsi untuk menambahkan pekerjaan
+    jobForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const title = document.getElementById('jobInput').value;
+      const description = document.getElementById('jobDescription').value;
+      const salary = document.getElementById('jobSalary').value;
+
+      const response = await fetch(API_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ title, description, salary }),
+      });
+
+      if (response.ok) {
+        const newJob = await response.json();
+        addJobToDOM(newJob); // Tambahkan ke UI
+        jobForm.reset();
+      } else {
+        alert('Failed to add job!');
+      }
+    });
+
+    // Fungsi untuk menghapus pekerjaan
+    async function deleteJob(id) {
+      const response = await fetch(`${API_URL}/${id}`, { method: 'DELETE' });
+      if (response.ok) {
+        document.querySelector(`.job-listing[data-id="${id}"]`).remove();
+      } else {
+        alert('Failed to delete job!');
+      }
+    }
+
+    // Muat data awal
+    loadJobs();
+  </script>
 </body>
 </html>
