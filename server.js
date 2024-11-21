@@ -10,12 +10,10 @@ const bcrypt = require('bcrypt');
 const passport = require('passport');
 const flash = require('express-flash');
 const session = require('express-session');
+const methodOverride = require('method-override')
 
 //penyimpanan user
 const users = [];
-
-// Array untuk menyimpan daftar pekerjaan
-const jobPostings = [];
 
 //setting stuff
 const initializePassport = require('./passport-config');
@@ -39,22 +37,27 @@ app.use(session({
 
 app.use(passport.initialize())
 app.use(passport.session())
+app.use(methodOverride('_method'))
 
 //render frontend
 app.get("/JobQues", (req, res) => {
   res.render('./landing page/landingPage.html.ejs');
 })
 
-app.get("/JobQues/sign-in", (req, res) => {
+app.get("/JobQues/sign-in", checkNotAuthenticated,(req, res) => {
   res.render('./login/sign in page/signInPage.html.ejs');
 })
 
-app.get("/JobQues/sign-up", (req, res) => {
+app.get("/JobQues/sign-up", checkNotAuthenticated,(req, res) => {
   res.render('./login/sign up page/signUpPage.html.ejs');
 })
 
-app.get("/JobQues/Home-Page", (req, res) => {
+app.get("/JobQues/Home-Page", checkAuthenticated, (req, res) => {
   res.render('./home page/homePage.html.ejs');
+})
+
+app.get("/JobQues/Apply/:id", checkAuthenticated,(req, res) => {
+  res.render('./form lamaran/formLamaran.html.ejs');
 })
 
 //sign in
@@ -65,7 +68,7 @@ app.post("/JobQues/sign-in", passport.authenticate('local', {
 }))
 
 //sign up
-app.post("/JobQues/sign-up", async (req, res) => {
+app.post("/JobQues/sign-up", checkNotAuthenticated, async (req, res) => {
   try {
     const hashedPassword = await bcrypt.hash(req.body.password, 10)
     users.push({
@@ -82,8 +85,50 @@ app.post("/JobQues/sign-up", async (req, res) => {
   }
 })
 
+//authenticate
+function checkAuthenticated(req, res, next) {
+  if (req.isAuthenticated()) {
+    return next()
+  }
+
+  res.redirect('/JobQues/sign-up')
+}
+
+function checkNotAuthenticated(req, res, next) {
+  if (req.isAuthenticated()) {
+    return res.redirect('/JobQues/Home-Page')
+  }
+  next()
+}
+
+//log out
+app.delete('/logout', (req, res) => {
+  req.logOut((err) => {
+    if (err) {
+      return next(err);
+    }
+    res.redirect('/JobQues');
+  });
+});
+
 // Data pekerjaan (simpan di memori sementara)
-let jobList = [];
+let jobList = [
+  { id: 1, title: 'perusahaan A', 
+    description: 'Frontend developer, Full time, ', 
+    salary: '4000000'},
+  { id: 2, title: 'perusahaan B', 
+    description: 'Backend developer', 
+    salary: '5000000'},
+  { id: 3, title: 'perusahaan C', 
+    description: 'Android developer', 
+    salary: '7000000'},
+  { id: 4, title: 'perusahaan D', 
+    description: 'Apple developer', 
+    salary: '8000000'},
+  { id: 5, title: 'perusahaan E', 
+    description: 'Cyber security', 
+    salary: '10000000'}
+];
 
 // Endpoint untuk mendapatkan semua pekerjaan
 app.get('/api/jobs', (req, res) => {
@@ -105,6 +150,7 @@ app.post('/api/jobs', (req, res) => {
     };
 
     jobList.push(newJob);
+    console.log(jobList);
     res.status(201).json(newJob);
 });
 
@@ -121,7 +167,14 @@ app.delete('/api/jobs/:id', (req, res) => {
     res.status(204).send();
 });
 
-app.use(session({ secret: 'secret' }));
+//job form container
+let jobApply = [];
+
+//job form
+app.post('/JobQues/Apply/:id', (req, res) => {
+  
+})
+
 //port
 const port = 5000;
 app.listen(port, () => {
