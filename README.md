@@ -21,11 +21,11 @@ Inilah tutorial singkat untuk memulai penggunaan website
 - Dalam terminal, ketiklah npm install
 - setelah itu, masukkan " app.use(session({ secret: 'secret' })) " ke dalam file server.js
 - Nyalakan website melalui terminal, ketik npm run devStart
-- Klik (link website) 
+- Klik [http://localhost:5000/JobQues]
 - Website dapat mulai digunakan
 
 Apabila terjadi masalah atau website tidak menyala
-hubungi kami di instagram: <a href= "https://www.instagram.com/job.ques/">
+hubungi kami di instagram: [https://www.instagram.com/job.ques/]
 
 ## Kekurangan yang masih ada (work in progress)
 Website ini hanyalah website prototype sehingga masih memiliki banyak kekurangan, seperti
