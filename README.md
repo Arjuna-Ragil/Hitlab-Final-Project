@@ -34,7 +34,6 @@ Website ini hanyalah website prototype sehingga masih memiliki banyak kekurangan
 
 - belum memiliki database yang tetap, hanya menggunakan local variabel
 - Ketika refresh Home page, foto profil masih ke reset ke foto placeholder
-- Lamaran yang di submit hanya tersimpan dalam data base, tidak terkirim ke mana - mana
-- Apply data tidak disimpan di backend
+- Apply data tidak tersimpan di backend
 
 ## Thank you for using our website
