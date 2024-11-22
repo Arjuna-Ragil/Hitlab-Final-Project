@@ -127,6 +127,21 @@ let jobList = [
     salary: '8000000'},
   { id: 5, title: 'Kominfo', 
     description: 'Cyber security', 
+    salary: '10000000'},
+  { id: 6, title: 'Meta', 
+    description: 'Frontend developer', 
+    salary: '4000000'},
+  { id: 7, title: 'Meta', 
+    description: 'Satpam', 
+    salary: '5000000'},
+  { id: 8, title: 'Mandiri', 
+    description: 'Office Boy', 
+    salary: '7000000'},
+  { id: 9, title: 'Google', 
+    description: 'Project Manager', 
+    salary: '8000000'},
+  { id: 10, title: 'Kominfo', 
+    description: 'White hat Hacker', 
     salary: '10000000'}
 ];
 

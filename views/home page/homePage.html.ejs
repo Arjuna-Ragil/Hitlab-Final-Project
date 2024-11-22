@@ -116,26 +116,97 @@
         height: 100%;
         width: 100%;
         position: fixed;
-        z-index: 3;
-      }
-
-      #darkenScreen {
-        position: absolute;
-        z-index: 0;
-        height: 100%;
-        width: 100%;
-        background-color: black;
-        opacity: 40%;
+        z-index: 4;
       }
 
       #jobForm {
         background-color: white;
+        border: solid rgb(255, 94, 0);
         height: 300px;
-        width: 300px;
+        width: 500px;
         padding: 20px;
         justify-self: center;
-        margin-top: 250px;
+        margin-top: 200px;
       } 
+
+      .inputAdd {
+        width: 100%;
+      }
+
+      #jobDescription {
+        height: 50px;
+      }
+
+      #addButtonContainer {
+        display: grid;
+        margin-left: 20px;
+        margin-right: 20px;
+      }
+
+      #addSubmitButton {
+        justify-self: flex-end;
+        grid-row: 1/2;
+        height: 54px;
+        width: 100px;
+        border: none;
+        font-size: larger;
+        text-align: center;
+        line-height: 49px;
+        font-family: 'Poppins', sans-serif; 
+        background-color: orange;
+        transition-duration: 500ms;
+      }
+
+      #addSubmitButton:hover {
+        justify-self: flex-end;
+        grid-row: 1/2;
+        height: 54px;
+        width: 100px;
+        border: solid rgb(202, 54, 0);
+        font-size: larger;
+        text-align: center;
+        line-height: 49px;
+        font-family: 'Poppins', sans-serif; 
+        background-color: orangered;
+        transition-duration: 500ms;
+      }
+
+      #batalSubmitButton {
+        justify-self: flex-start;
+        grid-row: 1/2;
+        height: 54px;
+        width: 100px;
+        border: none;
+        font-size: larger;
+        text-align: center;
+        line-height: 49px;
+        font-family: 'Poppins', sans-serif; 
+        background-color: grey;
+        transition-duration: 500ms;
+      }
+
+      #batalSubmitButton:hover {
+        justify-self: flex-start;
+        grid-row: 1/2;
+        height: 54px;
+        width: 100px;
+        border: solid black;
+        font-size: larger;
+        text-align: center;
+        line-height: 49px;
+        font-family: 'Poppins', sans-serif; 
+        background-color: red;
+        transition-duration: 500ms;
+      }
+
+      #darken {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        z-index: 3;
+        background-color: black;
+        opacity: 50%;
+      }
 
       .left-column {
         width: 30%;
@@ -253,6 +324,44 @@
         display: none;
       }
 
+      #jobListingInput {
+        display: grid;
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+
+      #postJob {
+        grid-column: 2/3;
+        grid-row: 1/2;
+        justify-self: flex-end;
+        width: 200px;
+        border: none;
+        font-size:medium;
+        text-align: center;
+        line-height: 49px;
+        font-family: 'Poppins', sans-serif; 
+        background-color: orange;
+        transition-duration: 500ms;
+      }
+
+      #postJob:hover {
+        grid-column: 2/3;
+        grid-row: 1/2;
+        width: 200px;
+        border: none;
+        font-size:medium;
+        text-align: center;
+        line-height: 49px;
+        font-family: 'Poppins', sans-serif; 
+        background-color: orangered;
+        transition-duration: 500ms;
+      }
+
+      #searchBar {
+        grid-column: 1/2;
+        grid-row: 1/2;
+      }
+
       @keyframes fadeIn {
         from {
           opacity: 0;
@@ -269,24 +378,32 @@
   <body>
     <div id="jobFormContainer" class="hide">
       <form id="jobForm" class="search-input">
+        <label>Nama Perusahaan</label>
         <input
           type="text"
           id="jobInput"
           placeholder="Nama Perusahaan"
+          class="inputAdd"
           required
-        /> <br> <br>
+        /> <br>
+        <label>Deskripsi</label>
         <textarea
           type="text"
           id="jobDescription"
           placeholder="Posisi Pekerjaan"
+          class="inputAdd"
           required>
-        </textarea> <br> <br>
-        <input type="number" id="jobSalary" placeholder="Gaji" required />
+        </textarea> <br> 
+        <label>Gaji</label>
+        <input type="number" id="jobSalary" placeholder="Gaji" class="inputAdd" required />
         <br> <br>
-        <button type="submit" onclick="finish()">Add</button>
+        <div id="addButtonContainer">
+          <button onclick="finish()" type="button" id="batalSubmitButton">Batal</button>
+          <button type="submit" onclick="finish()" id="addSubmitButton">Add</button>
+        </div>
       </form>
-      <!-- <div id="darkenScreen"></div> -->
     </div>
+    <div id="darken" class="hide"></div>
 
     <div id="navBar">
 
@@ -322,17 +439,18 @@
         </div>
         <div class="right-column">
           <h2>Job Listings</h2>
-          <button onclick="add()">Post Job</button>
-          <div class="job-listings"></div>
-          <div class="search-bar">
-            <input
-              type="text"
-              class="search-input"
-              placeholder="Search jobs..."
-              data-search
-            />
-          </div> 
-          <br>
+          <div id="jobListingInput">
+            <button onclick="add()" id="postJob">Post Job</button>
+            <div class="job-listings"></div>
+            <div class="search-bar" id="searchBar">
+              <input
+                type="text"
+                class="search-input"
+                placeholder="Search jobs..."
+                data-search
+              />
+            </div> 
+          </div>
           <div class="job-listings" id="jobListings"></div>
         </div>
       </div>
@@ -350,12 +468,16 @@
       //add job 
       function add() {
         let addJob = document.getElementById("jobFormContainer")
+        let darken = document.getElementById("darken")
         addJob.classList.remove("hide")
+        darken.classList.remove("hide")
       }
 
       function finish() {
         let addJob = document.getElementById("jobFormContainer")
+        let darken = document.getElementById("darken")
         addJob.classList.add("hide")
+        darken.classList.add("hide")
       }
 
       //backend
