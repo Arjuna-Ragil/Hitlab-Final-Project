@@ -1,3 +1,256 @@
-@media screen and (max-width:480) {
-  
+@media screen and (max-width: 480px) {
+  /*page settings*/
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+  }
+
+  /*main layout*/
+  #mainContainer {
+    display: grid;
+    left: 0px;
+    width: 480px;
+  }
+
+  /*area - area*/
+  #navBar {
+    position: fixed;
+    top: -2px;
+    left: 0px;
+    z-index: 2;
+    width: 100%;
+    height: 160px;
+    background-color: white;
+  }
+
+  #mulaiKarir {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 200px;
+    width: 100%;
+    height: 1059px;
+    background-image: linear-gradient(to left, rgb(255, 171, 102), rgb(255, 235, 219));
+  }
+
+  #keuntungan {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 40px;
+    width: 100%;
+    height: 1212px;
+    background-color: rgb(253, 205, 161);
+  }
+
+  #tentangKami {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 40px;
+    padding-bottom: 20px;
+    width: 100%;
+    background-color: orangered;
+  }
+
+  /*navBar*/
+  #navBarContainer {
+    display: grid;
+    align-items: center;
+    column-gap: 20px;
+    margin-left: 60px;
+    margin-right: 60px;
+  }
+
+  #logoContainer {
+    display: flex;
+    justify-self: center;
+  }
+
+  #logo1{
+    display: grid;
+    grid-column: 1/2;
+    margin-top: 5px;
+    height: 150px;
+    width: 87px;
+  }
+
+  #text{
+    display: grid;
+    grid-column: 2/7;
+    height: 151px;
+    width: 301px;
+  }
+
+  .navBarButton {
+    display: none
+  }
+
+  /*mulai Karir*/
+  #textUtama {
+    margin-bottom: 0px;
+    font-size: 62px;
+    font-family: 'Poppins', sans-serif; 
+    text-align: center;
+  }
+
+  #textSecondary {
+    margin-top: 0px;
+    margin-bottom: 8px;
+    margin-left: 226px;
+    margin-right: 226px;
+    font-size: 32px;
+    font-family: 'Poppins', sans-serif;
+    text-align: center; 
+  }
+
+  #buttonLoginContainer {
+    display: grid;
+    row-gap: 50px;
+    width: 357px;
+    height: 400px;
+    margin-top: 50px;
+  }
+
+  .buttonLogin {
+    display: grid;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 52px;
+    font-family: 'Poppins', sans-serif; 
+    background-color: orangered;
+  }
+
+  #signUp {
+    grid-row: 1/2;
+  }
+
+  #signIn {
+    grid-row: 2/3;
+  }
+
+  #bottomPart {
+    justify-self: center;
+  }
+
+  #foxPic {
+    margin-top: 12px;
+    width: 833px;
+    height: 460px;
+  }
+
+  /*mulai karir animation*/
+  .boxAnimation {
+    display: none;
+  }
+
+  /*keuntungan*/
+  #keuntunganTitle {
+    margin-top: 0px;
+    padding-top: 60px;
+    padding-bottom: 50px;
+    width: 100%;
+    height: 54px;
+    text-align: center;
+    font-size: 54px;
+    font-family: 'Poppins', sans-serif; 
+    background-color: orangered;
+  }
+
+  #keuntunganContainer {
+    display: grid;
+    column-gap: 10px;
+    row-gap: 40px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .keuntunganBox {
+    padding: 10px;
+    border-radius: 10px;
+    width: 200px;
+    height: 288px;
+    text-align: center;
+    font-size: medium;
+    background-color: orange;
+  }
+
+  .keuntunganTeks {
+    margin-bottom: 0px;
+    font-size: 20px;
+    font-family: 'Poppins', sans-serif; 
+  }
+
+  .keuntunganPic {
+    width: 200px;
+    height: 200px;
+  }
+
+  #keuntungan1 {
+    grid-column: 1/2;
+    grid-row: 1/2;
+  }
+
+  #keuntungan2 {
+    grid-column: 3/4;
+    grid-row: 1/2;
+  }
+
+  #keuntungan3 {
+    grid-column: 1/2;
+    grid-row: 2/3;
+  }
+
+  #keuntungan4 {
+    grid-column: 3/4;
+    grid-row: 2/3;
+  }
+
+  #keuntungan5 {
+    grid-column: 2/3;
+    grid-row: 3/4;
+  }
+
+  /*tentang kami*/
+  #tentangKamiTitle {
+    font-size: 67px;
+    font-family: 'Poppins', sans-serif; 
+  }
+
+  #logo2 {
+    width: 150px;
+    height: 300px;
+  }
+
+  #tentangKamiSubTitle {
+    font-size: 30px;
+    font-family: 'Poppins', sans-serif; 
+  }
+
+  #tentangKamiP {
+    padding-left: 100px;
+    padding-right: 100px;
+    text-align: justify ;
+    font-size: 23px;
+    line-height: 1.5;
+    font-family: 'Poppins', sans-serif; 
+  }
+
+  #sosmedText {
+    font-size: 27px;
+    font-family: 'Poppins', sans-serif; 
+  }
+
+  .socialLogo {
+    padding: 5px;
+    width: 80px;
+    height: 80px;
+  }
 }

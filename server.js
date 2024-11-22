@@ -1,3 +1,5 @@
+//To start the website, please paste the code that is in the readme to the bottom of this server.js file
+
 //Requiring stuff//
 if (process.env.NODE_ENV !== 'production') {
   require('dotenv').config()
@@ -77,7 +79,7 @@ app.post("/JobQues/sign-up", checkNotAuthenticated, async (req, res) => {
       email: req.body.email,
       password: hashedPassword,
     })
-    console.log(users)
+    //console.log(users) Nyalakan untuk melihat data users
     res.redirect('/JobQues/sign-in')
   }
   catch {
@@ -114,7 +116,7 @@ app.delete('/logout', (req, res) => {
 // Data pekerjaan (simpan di memori sementara)
 let jobList = [
   { id: 1, title: 'Google', 
-    description: 'Frontend developer, Full time, ', 
+    description: 'Frontend developer, Full time', 
     salary: '4000000'},
   { id: 2, title: 'Meta', 
     description: 'Backend developer', 
@@ -165,7 +167,7 @@ app.post('/api/jobs', (req, res) => {
     };
 
     jobList.push(newJob);
-    console.log(jobList);
+    //console.log(jobList); Nyalakan untuk melihat data pekerjaan
     res.status(201).json(newJob);
 });
 
@@ -189,6 +191,9 @@ let jobApply = [];
 app.post('/JobQues/Apply/:id', (req, res) => {
   res.send('apply have been sent')
 })
+
+//Paste the code here
+
 
 //port
 const port = 5000;

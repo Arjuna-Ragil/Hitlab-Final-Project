@@ -5,8 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home Page</title>
     <link rel="icon" type="image/x-icon" href="/favicon (1).ico" />
+    <link rel="stylesheet" type="text/css" href="/stylesheet/homePagePhone.css" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <style>
+    @media  screen and (min-width: 481px) {
       input::-webkit-outer-spin-button,
       input::-webkit-inner-spin-button {
         -webkit-appearance: none;
@@ -80,7 +82,7 @@
         grid-row: 1/2;
       }
 
-      #logoutButton {
+      .logoutButton {
         display: grid;
         height: 54px;
         width: 100px;
@@ -93,7 +95,7 @@
         transition-duration: 500ms;
       }
 
-      #logoutButton:hover {
+      .logoutButton:hover {
         display: grid;
         height: 54px;
         width: 100px;
@@ -330,7 +332,7 @@
         padding-right: 10px;
       }
 
-      #postJob {
+      .postJob {
         grid-column: 2/3;
         grid-row: 1/2;
         justify-self: flex-end;
@@ -344,7 +346,7 @@
         transition-duration: 500ms;
       }
 
-      #postJob:hover {
+      .postJob:hover {
         grid-column: 2/3;
         grid-row: 1/2;
         width: 200px;
@@ -362,6 +364,28 @@
         grid-row: 1/2;
       }
 
+      .deleteButton {
+        width: 200px;
+        border: none;
+        font-size: larger;
+        text-align: center;
+        line-height: 49px;
+        font-family: 'Poppins', sans-serif; 
+        background-color: red;
+        transition-duration: 1s;
+      }
+
+      .deleteButton:hover {
+        width: 200px;
+        border: none;
+        font-size: larger;
+        text-align: center;
+        line-height: 49px;
+        font-family: 'Poppins', sans-serif; 
+        background-color: rgb(177, 0, 0);
+        transition-duration: 1s;
+      }
+
       @keyframes fadeIn {
         from {
           opacity: 0;
@@ -373,6 +397,7 @@
           transform: translateY(0);
         }
       }
+    }
     </style>
   </head>
   <body>
@@ -417,7 +442,7 @@
         <p id="welcoming">Welcome to JobQues, <%= name %></p>
 
         <form id="logoutContainer" action="/logOut?_method=DELETE" method="POST">
-          <button id="logoutButton" type="submit">logout</button>
+          <button class="logoutButton" type="submit">logout</button>
         </form>
 
       </div>
@@ -440,7 +465,7 @@
         <div class="right-column">
           <h2>Job Listings</h2>
           <div id="jobListingInput">
-            <button onclick="add()" id="postJob">Post Job</button>
+            <button onclick="add()" class="postJob">Post Job</button>
             <div class="job-listings"></div>
             <div class="search-bar" id="searchBar">
               <input
@@ -503,8 +528,8 @@
         <p> <b> Nama Perusahaan: </b> ${job.title}</p>
         <p> <b> Deskripsi Pekerjaan: </b> <br> <br>${job.description}</p>
         <p> <b> Gaji: </b> Rp.${job.salary}</p>
-        <button onclick="deleteJob(${job.id})">Delete</button>
-        <button onclick="applyJob(${job.id})">Apply</button>
+        <button class="deleteButton" onclick="deleteJob(${job.id})">Delete</button>
+        <button class="postJob" onclick="applyJob(${job.id})">Apply</button>
          `;
 
         jobListings.appendChild(jobDiv);

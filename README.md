@@ -11,7 +11,7 @@ Website ini merupakan tugas final Project hitlab kelompok 4. Kelompok kami menda
 - Mempelajari dan menerapkan beberapa Dependencies untuk backend
 
 ## Nontonlah panduan video mengenai website
-(Demo video) 
+<a href="https://youtu.be/glokAPn294w" target="_blank">
 
 ## Panduan memulai dan menyalakan website
 Inilah tutorial singkat untuk memulai penggunaan website
@@ -33,5 +33,6 @@ Website ini hanyalah website prototype sehingga masih memiliki banyak kekurangan
 - belum memiliki database yang tetap, hanya menggunakan local variabel
 - Ketika refresh Home page, foto profil masih ke reset ke foto placeholder
 - Lamaran yang di submit hanya tersimpan dalam data base, tidak terkirim ke mana - mana
+- Apply data tidak disimpan di backend
 
 ## Thank you for using our website
