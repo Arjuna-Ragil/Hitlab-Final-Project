@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home Page</title>
     <link rel="icon" type="image/x-icon" href="/favicon (1).ico" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <style>
       input::-webkit-outer-spin-button,
       input::-webkit-inner-spin-button {
@@ -13,7 +14,7 @@
       }
 
       body {
-        font-family: Arial, sans-serif;
+        font-family: 'Poppins', sans-serif; 
         margin: 0;
         padding: 0;
         background-color: #f4f4f4;
@@ -22,64 +23,165 @@
       .container {
         width: 100%;
         height: 100%;
-        background-color: #ff8500;
+        background-image: linear-gradient(to right, orange , orangered);
       }
 
-      .header {
-        display: grid;
-        margin-bottom: 20px;
-      }
-
-      .logo {
+      #navBar {
+        position: fixed;
+        top: -2px;
+        left: 0px;
+        z-index: 2;
+        padding-bottom: 10px;
+        padding-top: 10px;
+        width: 100%;
+        height: 56px;
         background-color: white;
-        border-radius: 20px;
-        width: 200px;
-        margin-top: 5px;
-        grid-column: 1/2;
-        grid-row: 1/2;
-        align-self: center;
-        justify-self: center;
       }
 
-      .search-bar {
-        display: flex;
+      #navBarContainer {
+        display: grid;
         align-items: center;
-        justify-self: center;
-        grid-column: 3/5;
-        grid-row: 1/2;
+        column-gap: 50px;
+        margin-left: 60px;
+        margin-right: 100px;
       }
 
-      .search-input {
-        width: 200px;
-        padding: 10px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
+      #logoContainer {
+        display: grid;
+        grid-column: 1/2;
+      }
+
+      #logo1{
+        display: grid;
+        justify-self: flex-end;
+        grid-column: 1/2;
+        margin-top: 5px;
+        height: 45px;
+        width: 30px;
+      }
+
+      #text{
+        display: grid;
+        grid-column: 2/7;
+        height: 58px;
+        width: 150px;
+      }
+
+      #welcoming {
+        grid-column: 2/3;
+        font-size: large;
+        font-weight: 500;
+        justify-self: center;
       }
 
       #logoutContainer {
-        width: 50px;
-        height: 50px;
         align-self: center;
-        justify-self: center;
-        grid-column: 5/7;
+        justify-self: flex-end;
+        grid-column: 3/4;
         grid-row: 1/2;
       }
 
       #logoutButton {
-        width: 50px;
-        height: 50px;
+        display: grid;
+        height: 54px;
+        width: 100px;
+        border: none;
+        font-size: larger;
+        text-align: center;
+        line-height: 49px;
+        font-family: 'Poppins', sans-serif; 
+        background-color: transparent;
+        transition-duration: 500ms;
+      }
+
+      #logoutButton:hover {
+        display: grid;
+        height: 54px;
+        width: 100px;
+        border-width: 10px;
+        border: solid rgb(161, 0, 0);
+        font-size: larger;
+        font-family: 'Poppins', sans-serif; 
+        background-color: red;
+        transition-duration: 500ms;
       }
 
       .content {
         display: flex;
+        margin-left: 50px;
+        margin-right: 50px;
+        margin-top: 60px;
+      }
+
+      #jobFormContainer {
+        height: 100%;
+        width: 100%;
+        position: fixed;
+        z-index: 3;
+      }
+
+      #darkenScreen {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        background-color: black;
+        opacity: 40%;
+      }
+
+      #jobForm {
+        background-color: white;
+        padding: 20px;
+        position: absolute;
+        justify-self: center;
+        align-self: center;
       }
 
       .left-column {
         width: 30%;
+        height: 400px;
         padding: 20px;
         border: 1px solid #ccc;
         border-radius: 5px;
         background-color: white;
+        margin-right: 10px;
+      }
+
+      .profile {
+        display: flex;
+        justify-self: center;
+        text-align: center;
+        justify-content: center;
+      }
+
+      #profilePic {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+      }
+
+      #changeButton {
+        width: 200px;
+        border: none;
+        font-size:medium;
+        text-align: center;
+        line-height: 49px;
+        font-family: 'Poppins', sans-serif; 
+        background-color: orange;
+        transition-duration: 500ms;
+      }
+
+      #changeButton:hover {
+        border: none;
+        font-size:medium;
+        text-align: center;
+        line-height: 49px;
+        font-family: 'Poppins', sans-serif; 
+        background-color: orangered;
+        transition-duration: 500ms;
+      }
+
+      #changeImage {
+        display: none;
       }
 
       .right-column {
@@ -87,6 +189,18 @@
         padding: 20px;
         border: 1px solid #ccc;
         background-color: white;
+        border-radius: 5px;
+      }
+
+      .search-bar {
+        display: flex;
+        align-items: center;
+      }
+
+      .search-input {
+        width: 200px;
+        padding: 10px;
+        border: 1px solid #ccc;
         border-radius: 5px;
       }
 
@@ -152,57 +266,86 @@
     </style>
   </head>
   <body>
-    <div class="container">
-      <div class="header">
-        <div class="logo">
-          <img src="/image/logo and text.png" alt="error" width="150px" />
+    <div id="jobFormContainer">
+      <form id="jobForm">
+        <input
+          type="text"
+          id="jobInput"
+          placeholder="Nama Perusahaan"
+          required
+        /> <br>
+        <input
+          type="text"
+          id="jobDescription"
+          placeholder="Posisi Pekerjaan"
+          required
+        /> <br>
+        <input type="number" id="jobSalary" placeholder="Gaji" required />
+        <br>
+        <button type="submit">Add</button>
+      </form>
+      <div id="darkenScreen"></div>
+    </div>
+
+    <div id="navBar">
+
+      <div id="navBarContainer">
+
+        <div id="logoContainer">
+          <img id="logo1" src="/image/logo renew.png" alt="logo JobQues"/>
+          <img id="text" src="/image/text renew.png" alt="text JobQues"/>
         </div>
+
+        <p id="welcoming">Welcome to JobQues, <%= name %></p>
+
         <form id="logoutContainer" action="/logOut?_method=DELETE" method="POST">
           <button id="logoutButton" type="submit">logout</button>
         </form>
-        <div class="search-bar">
-        <input
-          type="text"
-          class="search-input"
-          placeholder="Search jobs..."
-          data-search
-        />
-      </div> 
+
       </div>
+
+    </div>
+
+    <div class="container">
+      <br> <br>
       <div class="content">
+
         <div class="left-column">
-          <h3>Profile</h3>
-          <ul>
-            <li>Nama:</li>
-            <li>Moto Profesional:</li>
-            <li>Kota:</li>
-            <li>Pendidikan:</li>
-          </ul>
+          <h3 class="profile">Profile</h3>
+          <img src="https://thumbs.dreamstime.com/b/default-avatar-profile-icon-social-media-user-image-gray-blank-silhouette-vector-illustration-305504006.jpg" alt="profilePic" id="profilePic" class="profile"/>
+          <p class="profile">Nama: <%= name %></p>
+          <div id="changeButton" class="profile">
+            <label for="changeImage">Change Image</label>
+          </div>
+          <input type="file" accept="image/jpeg, image/png, image/jpg" id="changeImage">
         </div>
         <div class="right-column">
           <h2>Job Listings</h2>
           <div class="job-listings"></div>
-          <form id="jobForm">
+          <div class="search-bar">
             <input
               type="text"
-              id="jobInput"
-              placeholder="Nama Perusahaan"
-              required
+              class="search-input"
+              placeholder="Search jobs..."
+              data-search
             />
-            <input
-              type="text"
-              id="jobDescription"
-              placeholder="Posisi Pekerjaan"
-              required
-            />
-            <input type="number" id="jobSalary" placeholder="Gaji" required />
-            <button type="submit">Add</button>
-          </form>
+          </div> 
+          <br>
           <div class="job-listings" id="jobListings"></div>
         </div>
       </div>
     </div>
     <script>
+      //frontend
+      //change profile picture
+      let profilePic = document.getElementById('profilePic')
+      let changeImage = document.getElementById('changeImage')
+
+      changeImage.onchange = function() {
+        profilePic.src = URL.createObjectURL(changeImage.files[0]);
+      }
+
+      //backend
       const API_URL = "http://localhost:5000/api/jobs";
       const jobForm = document.getElementById("jobForm");
       const jobListings = document.getElementById("jobListings");

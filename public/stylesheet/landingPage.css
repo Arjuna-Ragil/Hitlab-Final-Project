@@ -218,7 +218,7 @@ body {
 #box2 {
   grid-column: 6/7;
   grid-row: 2/3;
-  justify-self: flex-end;
+  justify-self: flex-start;
   align-self:flex-start;
   width: 248px;
   height: 168px;

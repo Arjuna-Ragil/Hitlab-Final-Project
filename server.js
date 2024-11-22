@@ -53,7 +53,7 @@ app.get("/JobQues/sign-up", checkNotAuthenticated,(req, res) => {
 })
 
 app.get("/JobQues/Home-Page", checkAuthenticated, (req, res) => {
-  res.render('./home page/homePage.html.ejs');
+  res.render('./home page/homePage.html.ejs', {name: req.user.name });
 })
 
 app.get("/JobQues/Apply/:id", checkAuthenticated,(req, res) => {
@@ -113,19 +113,19 @@ app.delete('/logout', (req, res) => {
 
 // Data pekerjaan (simpan di memori sementara)
 let jobList = [
-  { id: 1, title: 'perusahaan A', 
+  { id: 1, title: 'Google', 
     description: 'Frontend developer, Full time, ', 
     salary: '4000000'},
-  { id: 2, title: 'perusahaan B', 
+  { id: 2, title: 'Meta', 
     description: 'Backend developer', 
     salary: '5000000'},
-  { id: 3, title: 'perusahaan C', 
+  { id: 3, title: 'Mandiri', 
     description: 'Android developer', 
     salary: '7000000'},
-  { id: 4, title: 'perusahaan D', 
+  { id: 4, title: 'BCA', 
     description: 'Apple developer', 
     salary: '8000000'},
-  { id: 5, title: 'perusahaan E', 
+  { id: 5, title: 'Kominfo', 
     description: 'Cyber security', 
     salary: '10000000'}
 ];
@@ -172,7 +172,7 @@ let jobApply = [];
 
 //job form
 app.post('/JobQues/Apply/:id', (req, res) => {
-  
+  res.send('apply have been sent')
 })
 
 //port
