@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apply Now</title>
+    <link rel="icon" type="image/x-icon" href="/favicon (1).ico" />
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: black;
+            padding: 12px;
+            background-color: #fff; 
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #fff;
+            border: solid;
+            border-width: 5px;
+            border-color: #ff8d0c;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #ff8d0c; ;
+            font-weight: 900;
+        }
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+        input, textarea, button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #ff8d0c; 
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            font-family: 'Poppins', sans-serif;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+        button:hover {
+            background-color: #c7c4c0; 
+        }
+
+        form {
+            padding-right: 15px;
+        }
+    </style>
+</head>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<body>
+    <div class="container">
+        <h1>Apply Now</h1>
+        <form action="/JobQues/Apply/:id" method="POST" enctype="multipart/form-data">
+            <!-- Name -->
+            <label for="name">Nama Lengkap:</label>
+            <input type="text" id="name" name="name" required>
+
+            <!-- Email -->
+            <label for="email">Alamat Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <!-- Phone -->
+            <label for="phone">Nomor Telepon:</label>
+            <input type="tel" id="phone" name="phone" required>
+
+            <!-- Resume Upload -->
+            <label for="resume">Unggah Resume:</label>
+            <input type="file" id="resume" name="resume" accept=".pdf,.doc,.docx" required>
+
+            <!-- Cover Letter -->
+            <label for="cover-letter">Cover Letter:</label>
+            <input type="file" id="resume" name="resume" accept=".pdf,.doc,.docx" required>
+
+            <!-- Submit Button -->
+            <button type="submit">Submit Application</button>
+        </form>
+    </div>
+</body>
+</html>

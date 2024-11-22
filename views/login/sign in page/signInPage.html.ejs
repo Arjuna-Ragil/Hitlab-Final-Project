@@ -99,9 +99,13 @@ button:hover {
 }
 
 /* Change styles for cancel button and signup button on extra small screens */
-@media screen and (max-width: 300px) {
+@media screen and (max-width: 480px) {
   .cancelbtn, .signupbtn {
      width: 50%
+  }
+
+  .logo {
+    display: none;
   }
 }
 
@@ -117,7 +121,7 @@ button:hover {
     <% if (messages.error) {%>
       <%= messages.error %>
     <% } %>
-    <br>
+    <br> <br>
 
     <label for="email"><b>Email</b></label>
     <input type="text" placeholder="Masukkan Email" name="email" id="email" required>
@@ -125,15 +129,9 @@ button:hover {
     <label for="password"><b>Kata Sandi</label>
     <input type="password" placeholder="Masukkan Kata Sandi" name="password" id="password" required>
     
-    <label>
-      <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Selalu Ingat Akun
-    </label>
-    
-  
-
     <div class="clearfix">
       <button type="button" class="cancelbtn" onclick="landingPage()">Batal</button>
-      <button type="submit" class="signupbtn">Sign In</button>
+      <button type="submit" class="signupbtn" id="submit">Sign In</button>
   </div>
 
   <script src="/scripts/login.js"></script>
