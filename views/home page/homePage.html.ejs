@@ -1,200 +1,602 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home Page</title>
-  <link rel="icon" type="image/x-icon" href="/image/favicon (1).ico">
-  <style>
-    body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-    }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home Page</title>
+    <link rel="icon" type="image/x-icon" href="/favicon (1).ico" />
+    <link rel="stylesheet" type="text/css" href="/stylesheet/homePagePhone.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <style>
+    @media  screen and (min-width: 481px) {
+      input::-webkit-outer-spin-button,
+      input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
 
-    .container {
-    width: 100%;
-    height: 100%;
-    background-color: #FF8500;
-    }
+      body {
+        font-family: 'Poppins', sans-serif; 
+        margin: 0;
+        padding: 0;
+        background-image: linear-gradient(to right, orange , orangered);
+      }
 
-    .header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 20px;
-    }
+      .container {
+        width: 100%;
+        height: 100%;
+      }
 
-    .logo {
-    color: #333;
-    }
+      #navBar {
+        position: fixed;
+        top: -2px;
+        left: 0px;
+        z-index: 2;
+        padding-bottom: 10px;
+        padding-top: 10px;
+        width: 100%;
+        height: 56px;
+        background-color: white;
+      }
 
-    .search-bar {
-    display: flex;
-    align-items: center;
-    }
+      #navBarContainer {
+        display: grid;
+        align-items: center;
+        column-gap: 50px;
+        margin-left: 60px;
+        margin-right: 100px;
+      }
 
-    .search-input {
-    width: 200px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    }
+      #logoContainer {
+        display: grid;
+        grid-column: 1/2;
+      }
 
-    .profile-photo {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    margin-left: 20px;
-    }
+      #logo1{
+        display: grid;
+        justify-self: flex-end;
+        grid-column: 1/2;
+        margin-top: 5px;
+        height: 45px;
+        width: 30px;
+      }
 
-    .content {
-    display: flex;
-    }
+      #text{
+        display: grid;
+        grid-column: 2/7;
+        height: 58px;
+        width: 150px;
+      }
 
-    .left-column {
-    width: 30%;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: white;
-    }
+      #welcoming {
+        grid-column: 2/3;
+        font-size: large;
+        font-weight: 500;
+        justify-self: center;
+      }
 
-    .right-column {
-    width: 65%;
-    padding: 20px;
-    border: 1px solid #ccc;
-    background-color: white;
-    border-radius: 5px;
-    }
+      #logoutContainer {
+        align-self: center;
+        justify-self: flex-end;
+        grid-column: 3/4;
+        grid-row: 1/2;
+      }
 
-    .job-listings {
-    margin-top: 20px;
-    }
+      .logoutButton {
+        display: grid;
+        height: 54px;
+        width: 100px;
+        border: none;
+        font-size: larger;
+        text-align: center;
+        line-height: 49px;
+        font-family: 'Poppins', sans-serif; 
+        background-color: transparent;
+        transition-duration: 500ms;
+      }
 
-    .job-listing {
-    padding: 15px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    margin-bottom: 10px;
-    background-color: #fff;
-    }
+      .logoutButton:hover {
+        display: grid;
+        height: 54px;
+        width: 100px;
+        border-width: 10px;
+        border: solid rgb(161, 0, 0);
+        font-size: larger;
+        font-family: 'Poppins', sans-serif; 
+        background-color: red;
+        transition-duration: 500ms;
+      }
 
-    .footer {
-    text-align: center;
-    margin-top: 20px;
-    font-size: 12px;
-    color: black;
+      .content {
+        display: flex;
+        margin-left: 50px;
+        margin-right: 50px;
+        margin-top: 60px;
+      }
+
+       #jobFormContainer {
+        height: 100%;
+        width: 100%;
+        position: fixed;
+        z-index: 4;
+      }
+
+      #jobForm {
+        background-color: white;
+        border: solid rgb(255, 94, 0);
+        height: 300px;
+        width: 500px;
+        padding: 20px;
+        justify-self: center;
+        margin-top: 200px;
+      } 
+
+      .inputAdd {
+        width: 100%;
+      }
+
+      #jobDescription {
+        height: 50px;
+      }
+
+      #addButtonContainer {
+        display: grid;
+        margin-left: 20px;
+        margin-right: 20px;
+      }
+
+      #addSubmitButton {
+        justify-self: flex-end;
+        grid-row: 1/2;
+        height: 54px;
+        width: 100px;
+        border: none;
+        font-size: larger;
+        text-align: center;
+        line-height: 49px;
+        font-family: 'Poppins', sans-serif; 
+        background-color: orange;
+        transition-duration: 500ms;
+      }
+
+      #addSubmitButton:hover {
+        justify-self: flex-end;
+        grid-row: 1/2;
+        height: 54px;
+        width: 100px;
+        border: solid rgb(202, 54, 0);
+        font-size: larger;
+        text-align: center;
+        line-height: 49px;
+        font-family: 'Poppins', sans-serif; 
+        background-color: orangered;
+        transition-duration: 500ms;
+      }
+
+      #batalSubmitButton {
+        justify-self: flex-start;
+        grid-row: 1/2;
+        height: 54px;
+        width: 100px;
+        border: none;
+        font-size: larger;
+        text-align: center;
+        line-height: 49px;
+        font-family: 'Poppins', sans-serif; 
+        background-color: grey;
+        transition-duration: 500ms;
+      }
+
+      #batalSubmitButton:hover {
+        justify-self: flex-start;
+        grid-row: 1/2;
+        height: 54px;
+        width: 100px;
+        border: solid black;
+        font-size: larger;
+        text-align: center;
+        line-height: 49px;
+        font-family: 'Poppins', sans-serif; 
+        background-color: red;
+        transition-duration: 500ms;
+      }
+
+      #darken {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        z-index: 3;
+        background-color: black;
+        opacity: 50%;
+      }
+
+      .left-column {
+        width: 30%;
+        height: 400px;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: white;
+        margin-right: 10px;
+      }
+
+      .profile {
+        display: flex;
+        justify-self: center;
+        text-align: center;
+        justify-content: center;
+      }
+
+      #profilePic {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+      }
+
+      #changeButton {
+        width: 200px;
+        border: none;
+        font-size:medium;
+        text-align: center;
+        line-height: 49px;
+        font-family: 'Poppins', sans-serif; 
+        background-color: orange;
+        transition-duration: 500ms;
+      }
+
+      #changeButton:hover {
+        border: none;
+        font-size:medium;
+        text-align: center;
+        line-height: 49px;
+        font-family: 'Poppins', sans-serif; 
+        background-color: orangered;
+        transition-duration: 500ms;
+      }
+
+      #changeImage {
+        display: none;
+      }
+
+      .right-column {
+        width: 65%;
+        padding: 20px;
+        border: 1px solid #ccc;
+        background-color: white;
+        border-radius: 5px;
+      }
+
+      .search-bar {
+        display: flex;
+        align-items: center;
+      }
+
+      .search-input {
+        width: 200px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+
+      .job-listings {
+        margin-top: 20px;
+      }
+
+      .job-listing {
+        padding: 15px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        margin-bottom: 10px;
+        background-color: #fff;
+      }
+
+      .footer {
+        text-align: center;
+        margin-top: 20px;
+        font-size: 12px;
+        color: black;
+      }
+
+      #searchbar {
+        margin: 10px;
+        padding: 10px;
+        border-radius: 5px;
+        width: 50%;
+        box-sizing: border-box;
+      }
+
+      #list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .job {
+        font-size: 1.2em;
+        padding: 10px;
+        border-bottom: 1px solid #ccc;
+        animation: fadeIn 0.5s ease-in-out;
+      }
+
+      .job:last-child {
+        border-bottom: none;
+      }
+
+      .hide {
+        display: none;
+      }
+
+      #jobListingInput {
+        display: grid;
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+
+      .postJob {
+        grid-column: 2/3;
+        grid-row: 1/2;
+        justify-self: flex-end;
+        width: 200px;
+        border: none;
+        font-size:medium;
+        text-align: center;
+        line-height: 49px;
+        font-family: 'Poppins', sans-serif; 
+        background-color: orange;
+        transition-duration: 500ms;
+      }
+
+      .postJob:hover {
+        grid-column: 2/3;
+        grid-row: 1/2;
+        width: 200px;
+        border: none;
+        font-size:medium;
+        text-align: center;
+        line-height: 49px;
+        font-family: 'Poppins', sans-serif; 
+        background-color: orangered;
+        transition-duration: 500ms;
+      }
+
+      #searchBar {
+        grid-column: 1/2;
+        grid-row: 1/2;
+      }
+
+      .deleteButton {
+        width: 200px;
+        border: none;
+        font-size: larger;
+        text-align: center;
+        line-height: 49px;
+        font-family: 'Poppins', sans-serif; 
+        background-color: red;
+        transition-duration: 1s;
+      }
+
+      .deleteButton:hover {
+        width: 200px;
+        border: none;
+        font-size: larger;
+        text-align: center;
+        line-height: 49px;
+        font-family: 'Poppins', sans-serif; 
+        background-color: rgb(177, 0, 0);
+        transition-duration: 1s;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(-10px);
+        }
+
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
     }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <div class="header">
-      <div class="logo">
-        <img
-          src="/Hitlab-Final-Project/public/image/logo and text.png"
-          alt="error"
-          width="150px"
-        />
-      </div>
-      <div class="search-bar">
+    </style>
+  </head>
+  <body>
+    <div id="jobFormContainer" class="hide">
+      <form id="jobForm" class="search-input">
+        <label>Nama Perusahaan</label>
         <input
           type="text"
-          class="search-input"
-          placeholder="Search jobs..."
-        />
-        <img src="profile.jpg" alt="Profile" class="profile-photo" />
-      </div>
+          id="jobInput"
+          placeholder="Nama Perusahaan"
+          class="inputAdd"
+          required
+        /> <br>
+        <label>Deskripsi</label>
+        <textarea
+          type="text"
+          id="jobDescription"
+          placeholder="Posisi Pekerjaan"
+          class="inputAdd"
+          required>
+        </textarea> <br> 
+        <label>Gaji</label>
+        <input type="number" id="jobSalary" placeholder="Gaji" class="inputAdd" required />
+        <br> <br>
+        <div id="addButtonContainer">
+          <button onclick="finish()" type="button" id="batalSubmitButton">Batal</button>
+          <button type="submit" onclick="finish()" id="addSubmitButton">Add</button>
+        </div>
+      </form>
     </div>
-    <div class="content">
-      <div class="left-column">
-        <h3>Profile</h3>
-        <ul>
-          <li>Nama:</li>
-          <li>Moto Profesional:</li>
-          <li>Kota:</li>
-          <li>Pendidikan:</li>
-        </ul>
-      </div>
-      <div class="right-column">
-        <h2>Job Listings</h2>
-        <div class="job-listings"></div>
-        <form id="jobForm">
-          <input type="text" id="jobInput" placeholder="Nama Perusahaan" required />
-          <input type="text" id="jobDescription" placeholder="Posisi Pekerjaan" required />
-          <input type="number" id="jobSalary" placeholder="Gaji" required />
-          <button type="submit">Create</button>
+    <div id="darken" class="hide"></div>
+
+    <div id="navBar">
+
+      <div id="navBarContainer">
+
+        <div id="logoContainer">
+          <img id="logo1" src="/image/logo renew.png" alt="logo JobQues"/>
+          <img id="text" src="/image/text renew.png" alt="text JobQues"/>
+        </div>
+
+        <p id="welcoming">Welcome to JobQues, <%= name %></p>
+
+        <form id="logoutContainer" action="/logOut?_method=DELETE" method="POST">
+          <button class="logoutButton" type="submit">logout</button>
         </form>
-        <div class="job-listings" id="jobListings"></div>
+
+      </div>
+
+    </div>
+
+    <div class="container">
+      <br> <br>
+      <div class="content">
+
+        <div class="left-column">
+          <h3 class="profile">Profile</h3>
+          <img src="https://thumbs.dreamstime.com/b/default-avatar-profile-icon-social-media-user-image-gray-blank-silhouette-vector-illustration-305504006.jpg" alt="profilePic" id="profilePic" class="profile"/>
+          <p class="profile">Nama: <%= name %></p>
+          <div id="changeButton" class="profile">
+            <label for="changeImage">Change Image</label>
+          </div>
+          <input type="file" accept="image/jpeg, image/png, image/jpg" id="changeImage">
+        </div>
+        <div class="right-column">
+          <h2>Job Listings</h2>
+          <div id="jobListingInput">
+            <button onclick="add()" class="postJob">Post Job</button>
+            <div class="job-listings"></div>
+            <div class="search-bar" id="searchBar">
+              <input
+                type="text"
+                class="search-input"
+                placeholder="Search jobs..."
+                data-search
+              />
+            </div> 
+          </div>
+          <div class="job-listings" id="jobListings"></div>
+        </div>
       </div>
     </div>
-  </div>
-  <script>
-    const API_URL = 'http://localhost:5000/api/jobs';
-    const jobForm = document.getElementById('jobForm');
-    const jobListings = document.getElementById('jobListings');
+    <script>
+      //frontend
+      //change profile picture
+      let profilePic = document.getElementById('profilePic')
+      let changeImage = document.getElementById('changeImage')
 
-    // Fungsi untuk memuat pekerjaan dari backend
-    async function loadJobs() {
-      const response = await fetch(API_URL);
-      const jobs = await response.json();
-      jobListings.innerHTML = ''; // Kosongkan daftar sebelumnya
-      jobs.forEach(job => addJobToDOM(job));
-    }
+      changeImage.onchange = function() {
+        profilePic.src = URL.createObjectURL(changeImage.files[0]);
+      }
 
-    // Fungsi untuk menampilkan pekerjaan di DOM
-    function addJobToDOM(job) {
-      const jobDiv = document.createElement('div');
-      jobDiv.className = 'job-listing';
-      jobDiv.dataset.id = job.id;
+      //add job 
+      function add() {
+        let addJob = document.getElementById("jobFormContainer")
+        let darken = document.getElementById("darken")
+        addJob.classList.remove("hide")
+        darken.classList.remove("hide")
+      }
 
-      jobDiv.innerHTML = `
-        <p>Nama Perusahaan: ${job.title}</p>
-        <p>Posisi Pekerjaan: ${job.description}</p>
-        <p>Gaji: Rp.${job.salary}</p>
-        <button onclick="deleteJob(${job.id})">Delete</button>
-      `;
+      function finish() {
+        let addJob = document.getElementById("jobFormContainer")
+        let darken = document.getElementById("darken")
+        addJob.classList.add("hide")
+        darken.classList.add("hide")
+      }
 
-      jobListings.appendChild(jobDiv);
-    }
+      //backend
+      const API_URL = "http://localhost:5000/api/jobs";
+      const jobForm = document.getElementById("jobForm");
+      const jobListings = document.getElementById("jobListings");
 
-    // Fungsi untuk menambahkan pekerjaan
-    jobForm.addEventListener('submit', async (e) => {
-      e.preventDefault();
+      // Fungsi untuk memuat pekerjaan dari backend
+      async function loadJobs() {
+        const response = await fetch(API_URL);
+        const jobs = await response.json();
+        jobListings.innerHTML = ""; // Kosongkan daftar sebelumnya
+        jobs.forEach((job) => addJobToDOM(job));
+      }
 
-      const title = document.getElementById('jobInput').value;
-      const description = document.getElementById('jobDescription').value;
-      const salary = document.getElementById('jobSalary').value;
+      // Fungsi untuk menampilkan pekerjaan di DOM
+      function addJobToDOM(job) {
+        const jobDiv = document.createElement("div");
+        jobDiv.className = "job-listing";
+        jobDiv.dataset.id = job.id;
 
-      const response = await fetch(API_URL, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ title, description, salary }),
+        jobDiv.innerHTML = `
+        <p> <b> Nama Perusahaan: </b> ${job.title}</p>
+        <p> <b> Deskripsi Pekerjaan: </b> <br> <br>${job.description}</p>
+        <p> <b> Gaji: </b> Rp.${job.salary}</p>
+        <button class="deleteButton" onclick="deleteJob(${job.id})">Delete</button>
+        <button class="postJob" onclick="applyJob(${job.id})">Apply</button>
+         `;
+
+        jobListings.appendChild(jobDiv);
+        return {
+          title: job.title,
+          description: job.description,
+          element: jobDiv,
+        };
+      }
+
+      // Fungsi untuk menambahkan pekerjaan
+      jobForm.addEventListener("submit", async (e) => {
+        e.preventDefault();
+
+        const title = document.getElementById("jobInput").value;
+        const description = document.getElementById("jobDescription").value;
+        const salary = document.getElementById("jobSalary").value;
+
+        const response = await fetch(API_URL, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ title, description, salary }),
+        });
+
+        if (response.ok) {
+          const newJob = await response.json();
+          addJobToDOM(newJob); // Tambahkan ke UI
+          jobForm.reset();
+        } else {
+          alert("Failed to add job!");
+        }
       });
 
-      if (response.ok) {
-        const newJob = await response.json();
-        addJobToDOM(newJob); // Tambahkan ke UI
-        jobForm.reset();
-      } else {
-        alert('Failed to add job!');
+      // Fungsi untuk menghapus pekerjaan
+      async function deleteJob(id) {
+        const response = await fetch(`${API_URL}/${id}`, { method: "DELETE" });
+        if (response.ok) {
+          document.querySelector(`.job-listing[data-id="${id}"]`).remove();
+        } else {
+          alert("Failed to delete job!");
+        }
       }
-    });
 
-    // Fungsi untuk menghapus pekerjaan
-    async function deleteJob(id) {
-      const response = await fetch(`${API_URL}/${id}`, { method: 'DELETE' });
-      if (response.ok) {
-        document.querySelector(`.job-listing[data-id="${id}"]`).remove();
-      } else {
-        alert('Failed to delete job!');
+      // Muat data awal
+      loadJobs();
+
+      //form apply
+      function applyJob(id) {
+        location.href = `http://localhost:5000/JobQues/Apply/${id}`
       }
-    }
 
-    // Muat data awal
-    loadJobs();
-  </script>
-</body>
+      //search bar
+      const searchInput = document.querySelector("[data-search]");
+
+      searchInput.addEventListener("input", async (e) => {
+        const response = await fetch(API_URL);
+        const jobs = await response.json();
+        const value = e.target.value.toLowerCase();
+        
+        jobs.forEach((job) => {
+          const isVisible = job.title.toLowerCase().includes(value) || job.description.toLowerCase().includes(value);
+          const jobElement = document.querySelector(`.job-listing[data-id="${job.id}"]`);
+          if (jobElement) {
+            jobElement.classList.toggle("hide", !isVisible);
+          }
+        });
+      });
+    </script>
+  </body>
 </html>
