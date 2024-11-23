@@ -12,7 +12,7 @@ Website ini merupakan tugas final Project hitlab kelompok 4. Kelompok kami menda
 
 ## Nontonlah panduan video mengenai website
 <a href="https://youtu.be/glokAPn294w" target="_blank">
-<img src="https://i9.ytimg.com/vi_webp/glokAPn294w/mqdefault.webp?v=6740aabc&sqp=CIDVgroG&rs=AOn4CLCXYZns7EahX2Yha7FThEck5I5FHw" alt="Video Tutorial" width="240" height="180" border="10"/>
+<img src="https://i9.ytimg.com/vi_webp/glokAPn294w/mqdefault.webp?v=6740aabc&sqp=CKT1hLoG&rs=AOn4CLB1qrO9uQdTZN8l0OHlKYp-4soULg" alt="Video Tutorial" width="240" height="180" border="10"/>
 </a>
 
 ## Panduan memulai dan menyalakan website
