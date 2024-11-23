@@ -21,7 +21,6 @@ Inilah tutorial singkat untuk memulai penggunaan website
 - Git clone repository github ini
 - Bukalah terminal folder hitlab-final-project
 - Dalam terminal, ketiklah npm install
-- setelah itu, masukkan " app.use(session({ secret: 'secret' })) " ke dalam file server.js
 - Nyalakan website melalui terminal, ketik npm run devStart
 - Klik [http://localhost:5000/JobQues]
 - Website dapat mulai digunakan
