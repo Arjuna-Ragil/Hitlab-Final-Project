@@ -1,4 +1,4 @@
-//To start the website, please paste the code that is in the readme to the bottom of this server.js file
+//server.js
 
 //Requiring stuff//
 if (process.env.NODE_ENV !== 'production') {
@@ -192,8 +192,8 @@ app.post('/JobQues/Apply/:id', (req, res) => {
   res.send('apply have been sent')
 })
 
-//Paste the code here
-
+//code biar nyala
+app.use(session({ secret: 'secret' }));
 
 //port
 const port = 5000;
